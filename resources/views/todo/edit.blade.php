@@ -3,7 +3,7 @@
 @section('content')
     <div class = "w-100 h-100 d-flex justify-content-center align-items-center">
         <div class = "text-center", style = "width: 40%">
-            <h1 class = "display-2 text-white">Todo App</h1>
+            <h1 class = "display-2 text-white">Edit your todo called</h1>
             <h2 class = "text-white pt-5">What next? Add something to your list!</h2>
             <form action = "{{ route('todo.store')}}" method = "POST">
                 @csrf
