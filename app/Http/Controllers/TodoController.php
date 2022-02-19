@@ -68,7 +68,7 @@ class TodoController extends Controller
      */
     public function edit(Todo $todo)
     {
-        return view('tode.edit')->with('todo', $todo);
+        return view('todo.edit')->with('todo', $todo);
     }
 
     /**
@@ -93,5 +93,6 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         $todo->delete();
+        return redirect('/');
     }
 }

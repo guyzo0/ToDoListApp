@@ -18,7 +18,7 @@
 
             <h2 class = "text-white pt-2">My Todo list:</h2> 
             <div class ="bg-white w-100">
-                @foreach($todos as $todo)
+                @forelse($todos as $todo)
                     <div class = "w-100 d-flex align-items-center justify-content-between">
                        <div class = "p-4"> @if ($todo->completed == 0)
                         <svg xmlns="http://www.w3.org/2000/svg" class ="icon icon-tabler icon-tabler-chevron-right" width ="36" height ="36" viewBox = "0 0 24 24" stroke-width="1.5"
@@ -62,7 +62,7 @@
                         <form action = "{{ route('todo.destroy', $todo->id)}}" method = "POST">
                             @method('DELETE')
                             @csrf 
-                        </form>
+                        
                         <button class ="border-0 bg-transparent">
                             <svg xmlns="http://www.w3.org/2000/svg" class ="icon icon-tabler icon-tabler-trash ml-2" width ="36" height ="36" viewBox = "0 0 24 24" stroke-width="1.5"
                                 stroke="#c14638" fill ="none" stroke-linecape = "round" stroke-linejoin="round">
@@ -74,9 +74,11 @@
                                 <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
                             </svg>
                         </button>
+                        </form>
                     </div>
                     </div>
-                @endforeach
+                    @empty
+                @endforelse
             </div>
         </div>
     </div>  

@@ -7,11 +7,12 @@
            
             <form action = "{{ route('todo.update', $todo->id)}}" method = "POST">
                 @csrf
+                @method('put')
                 <div class = "input-group nb-3 w-100">
-                    <input type = "text" class = "form-control form-control-lg" name = "title" placeholder = "Type here.."
+                    <input type = "text" class = "form-control form-control-lg" name = "title" value = "{{$todo->title}}"
                         aria-label = "Recipient's username" arial-describedby = "button-addon2">
                     <div class = "input-group-append">
-                        <button class = "btn btn-success" type = "submit" id = "button-addon2">Add to the list</button>
+                        <button class = "btn btn-success" type = "submit" id = "button-addon2">Save</button>
                     </div>
                 </div>
             </form>
